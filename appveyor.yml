@@ -63,6 +63,4 @@ artifacts:
     - path: 'Java\libraries\**\recognizers-text*.jar'
       name: JARs
 cache:
- - JavaScript\node_modules                        # local npm modules
- - '%USERPROFILE%\.nuget\packages -> .NET\*\*.csproj'  # project.json cache
  - JavaScript\packages
