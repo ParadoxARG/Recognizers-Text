@@ -22,7 +22,7 @@ clone_depth: 1
 branches:
   only:
   - master
-  - feature//.
+  - /feature\/.+/
 
 build:
   parallel: true
@@ -30,29 +30,17 @@ build:
 build_script:
 - cmd: >-
     CALL wmic os get caption, version, osarchitecture
-
     CALL node -v
-
     CALL npm -v
-
     CALL node -e "console.log(process.versions.v8);"
-
     cd .NET\
-
     build.ci.cmd
-
     cd ..\JavaScript\
-
     build.cmd
-
     cd ..\Python\
-
     build.cmd
-
     cd ..\java\
-
     build.ci.cmd
-
 # disable automatic tests
 test: off
 
