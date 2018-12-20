@@ -22,7 +22,7 @@ clone_depth: 1
 branches:
   only:
   - master
-  - /feature\/.+/
+  - feature
 
 build:
   parallel: true
