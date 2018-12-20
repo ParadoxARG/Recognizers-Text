@@ -6,6 +6,7 @@ environment:
   nodejs_version: "Stable"
   PYTHON: "C:\\Python36-x64"
   JAVA_HOME: "C:\\Program Files\\Java\\jdk9"
+  APPVEYOR_CACHE_ENTRY_ZIP_ARGS: "-t7z -mx=9"
 platform: Any CPU
 configuration: Release
 
@@ -15,14 +16,14 @@ init:
 # Install Node 8
 install:
   - ps: Install-Product node $env:nodejs_version
-  - cmd: SET PATH=%PYTHON%;%PYTHON%\\Scripts;%JAVA_HOME%\bin;%PATH%
+  - cmd: $env:PATH = $env:PYTHON;$env:PYTHON\\Scripts;$env:JAVA_HOME\bin;$env:PATH
 
 # Projects
 clone_depth: 1
 branches:
   only:
   - master
-  - feature//.
+  - /feature\/.+/
 
 build:
   parallel: true
@@ -61,3 +62,6 @@ artifacts:
       name: NuGets
     - path: 'Java\libraries\**\recognizers-text*.jar'
       name: JARs
+cache:
+ - JavaScript\node_modules                        # local npm modules
+ - '%USERPROFILE%\.nuget\packages -> .NET\*\*.csproj'  # project.json cache
