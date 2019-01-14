@@ -20,6 +20,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+            : base(config.Options)
+        {
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
+            AtRegex = ItalianTimeExtractorConfiguration.AtRegex;
+            TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
+            Numbers = config.Numbers;
+            TimeZoneParser = config.TimeZoneParser;
+        }
+
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
             var deltaMin = 0;
