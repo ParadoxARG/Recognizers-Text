@@ -55,37 +55,21 @@ test:
           
 test_script:
     - cd ..\Python\
-    - ECHO.
-    - ECHO # Installing recognizers-text
-    - CALL  pip install -e .\libraries\recognizers-text\
+    - pip install -e .\libraries\recognizers-text\
 
-    - ECHO.
-    - ECHO # Installing recognizers-number
-    - CALL  pip install -e .\libraries\recognizers-number\
+    - pip install -e .\libraries\recognizers-number\
 
-    - ECHO.
-    - ECHO # Installing recognizers-number-with-unit
-    - CALL  pip install -e .\libraries\recognizers-number-with-unit\
+    - pip install -e .\libraries\recognizers-number-with-unit\
 
-    - ECHO.
-    - ECHO # Installing recognizers-date-time
-    - CALL  pip install -e .\libraries\recognizers-date-time\
+    - pip install -e .\libraries\recognizers-date-time\
 
-    - ECHO.
-    - ECHO # Installing recognizers-sequence
-    - CALL  pip install -e .\libraries\recognizers-sequence\
+    - pip install -e .\libraries\recognizers-sequence\
 
-    - ECHO.
-    - ECHO # Installing recognizers-suite
-    - CALL  pip install -e .\libraries\recognizers-suite\
+    - pip install -e .\libraries\recognizers-suite\
 
-    - ECHO.
-    - ECHO # Installing Test Dependencies
-    - CALL pip install -r .\tests\requirements.txt
+    - pip install -r .\tests\requirements.txt
 
-    - ECHO.
-    - ECHO # Running tests
-    - CALL pytest --tb=line
+    - pytest --tb=line
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
