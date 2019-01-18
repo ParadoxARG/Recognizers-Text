@@ -54,6 +54,7 @@ build_script:
 test:
           
 test_script:
+    - cd ..\Python\
     - popd
     - ECHO.
     - ECHO # Installing recognizers-text
