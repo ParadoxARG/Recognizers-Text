@@ -1,4 +1,6 @@
-ECHO ==============================.NET BUILD START==============================
+ECHO ==============================.NET TESTS START==============================
+
+SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
 set configuration=Release
 
@@ -36,4 +38,4 @@ EXIT /b 0
 ECHO Test failure(s) found!
 EXIT /b 1
 
-ECHO ============================== .NET BUILD END ==============================
+ECHO ============================== .NET TESTS END ==============================
