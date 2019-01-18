@@ -1,3 +1,5 @@
+ECHO ==============================PYHTON BUILD START==============================
+
 pushd libraries\resource-generator
 
 REM Dependencies
@@ -14,3 +16,5 @@ CALL python index.py ..\recognizers-date-time\resource-definitions.json
 CALL python index.py ..\recognizers-sequence\resource-definitions.json
 
 popd
+
+ECHO ============================== PYHTON BUILD END ==============================

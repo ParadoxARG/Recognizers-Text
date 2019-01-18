@@ -40,6 +40,8 @@ build_script:
     CALL node -e "console.log(process.versions.v8);"
 
     cd .NET\
+    
+    build.ci.cmd
 
     cd ..\JavaScript\
     
@@ -55,6 +57,8 @@ test:
           
 test_script:
     cd ..\.NET\
+    
+    tests.ci.cmd
 
     cd ..\JavaScript\
     

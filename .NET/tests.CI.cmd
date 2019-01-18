@@ -1,16 +1,6 @@
-@ECHO off
-SETLOCAL EnableDelayedExpansion
+ECHO ==============================.NET BUILD START==============================
 
-ECHO.
-ECHO # Building .NET platform
-REM vswhere is an optional component for Visual Studio and also installed with Build Tools. 
-REM vswhere will look for Community, Professional, and Enterprise editions of Visual Studio
-REM (only works with Visual Studio 2017 Update 2 or newer installed)
-SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
-
-for /f "usebackq tokens=*" %%i in (`!vswhere! -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
-  set VSInstallDir=%%i
-)
+set configuration=Release
 
 ECHO.
 ECHO # Finding VSTest
@@ -21,7 +11,6 @@ IF NOT EXIST "%VSTestDir%\vstest.console.exe" (
 	EXIT /B
 ) 
 
-set configuration=Release
 ECHO # Running .NET Tests
 SET testcontainer=
 FOR /R %%f IN (*Tests.dll) DO (
@@ -30,5 +19,21 @@ FOR /R %%f IN (*Tests.dll) DO (
 	)
 )
 ECHO "!VsTestDir!\vstest.console"
-CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer% --no-build --no-restore --test-adapter-path:. --logger:Appveyor Test
+CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
 IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR
+
+ECHO.
+ECHO # Running CreateAllPackages.cmd
+CALL CreateAllPackages.cmd
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to create packages.
+	EXIT /b -1
+)
+
+EXIT /b 0
+
+:TEST_ERROR
+ECHO Test failure(s) found!
+EXIT /b 1
+
+ECHO ============================== .NET BUILD END ==============================

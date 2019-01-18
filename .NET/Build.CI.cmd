@@ -24,14 +24,6 @@ if EXIST "%VSInstallDir%\MSBuild\!MsBuildVersion!\Bin\MSBuild.exe" (
 	EXIT /B
 )
 
-ECHO.
-ECHO # Finding VSTest
-SET VSTestDir=%VSInstallDir%\Common7\IDE\CommonExtensions\Microsoft\TestWindow
-
-IF NOT EXIST "%VSTestDir%\vstest.console.exe" (
-	ECHO "vstest.console.exe" could not be found at "%VSTestDir%"
-	EXIT /B
-) 
 
 ECHO.
 ECHO # Restoring NuGet dependencies
@@ -48,20 +40,3 @@ IF %ERRORLEVEL% NEQ 0 (
 	ECHO # Failed to build.
 	EXIT /b %ERRORLEVEL%
 )
-
-ECHO.
-
-
-ECHO.
-ECHO # Running CreateAllPackages.cmd
-CALL CreateAllPackages.cmd
-IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to create packages.
-	EXIT /b -1
-)
-
-EXIT /b 0
-
-:TEST_ERROR
-ECHO Test failure(s) found!
-EXIT /b 1

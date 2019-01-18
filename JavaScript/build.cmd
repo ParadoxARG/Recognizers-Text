@@ -1,4 +1,4 @@
-@ECHO off
+ECHO ==============================JS BUILD START==============================
 
 ECHO.
 ECHO # Building Javascript platform
@@ -24,3 +24,5 @@ REM Build Packages
 ECHO.
 ECHO # Building - npm run build
 CALL npm run build
+
+ECHO ============================== JS BUILD END ==============================
