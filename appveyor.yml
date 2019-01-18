@@ -41,8 +41,6 @@ build_script:
 
     cd .NET\
 
-    build.ci.cmd
-
     cd ..\JavaScript\
 
     cd ..\Python\
@@ -53,7 +51,7 @@ build_script:
 test:
     assemblies:
         only:
-          - '**\*tests.dll'
+          - '**\bin\Release\*tests.dll'
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
