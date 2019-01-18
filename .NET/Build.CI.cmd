@@ -49,6 +49,8 @@ IF %ERRORLEVEL% NEQ 0 (
 	EXIT /b %ERRORLEVEL%
 )
 
+ECHO.
+
 
 ECHO.
 ECHO # Running CreateAllPackages.cmd
