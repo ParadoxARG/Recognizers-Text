@@ -54,7 +54,7 @@ build_script:
 test:
           
 test_script:
-    cd .NET\
+    cd ..\.NET\
 
     cd ..\JavaScript\
     
