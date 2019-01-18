@@ -57,6 +57,8 @@ build_script:
 
 # disable automatic tests
 test:
+- cmd: >-
+    ECHO dir
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
