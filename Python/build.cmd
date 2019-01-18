@@ -13,35 +13,3 @@ CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 CALL python index.py ..\recognizers-date-time\resource-definitions.json
 CALL python index.py ..\recognizers-sequence\resource-definitions.json
 
-popd
-ECHO.
-ECHO # Installing recognizers-text
-CALL  pip install -e .\libraries\recognizers-text\
-
-ECHO.
-ECHO # Installing recognizers-number
-CALL  pip install -e .\libraries\recognizers-number\
-
-ECHO.
-ECHO # Installing recognizers-number-with-unit
-CALL  pip install -e .\libraries\recognizers-number-with-unit\
-
-ECHO.
-ECHO # Installing recognizers-date-time
-CALL  pip install -e .\libraries\recognizers-date-time\
-
-ECHO.
-ECHO # Installing recognizers-sequence
-CALL  pip install -e .\libraries\recognizers-sequence\
-
-ECHO.
-ECHO # Installing recognizers-suite
-CALL  pip install -e .\libraries\recognizers-suite\
-
-ECHO.
-ECHO # Installing Test Dependencies
-CALL pip install -r .\tests\requirements.txt
-
-ECHO.
-ECHO # Running tests
-CALL pytest --tb=line
