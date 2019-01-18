@@ -1,5 +1,8 @@
 ECHO ==============================.NET TESTS START==============================
 
+@ECHO off
+SETLOCAL EnableDelayedExpansion
+
 SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
 for /f "usebackq tokens=*" %%i in (`!vswhere! -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
