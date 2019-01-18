@@ -41,6 +41,8 @@ build_script:
 
     cd .NET\
 
+    build.ci.cmd
+
     cd ..\JavaScript\
 
     cd ..\Python\
