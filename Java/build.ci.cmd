@@ -14,4 +14,4 @@ CALL set MAVEN_OPTS=-Dfile.encoding=utf-8
 CALL mvn compile exec:java -pl libraries/resource-generator/
 
 ECHO # Building Java platform
-CALL mvn package
+CALL mvn clean package --batch-mode -Dmaven.test.skip=true
