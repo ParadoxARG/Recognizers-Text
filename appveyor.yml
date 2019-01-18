@@ -55,7 +55,6 @@ test:
           
 test_script:
     - cd ..\Python\
-    - popd
     - ECHO.
     - ECHO # Installing recognizers-text
     - CALL  pip install -e .\libraries\recognizers-text\
