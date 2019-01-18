@@ -45,15 +45,9 @@ build_script:
 
     cd ..\JavaScript\
 
-#    build.cmd
-
     cd ..\Python\
 
-#    build.cmd
-
     cd ..\java\
-
-#    build.ci.cmd
 
 # disable automatic tests
 test:
