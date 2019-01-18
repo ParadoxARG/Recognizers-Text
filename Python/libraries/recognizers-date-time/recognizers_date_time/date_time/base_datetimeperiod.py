@@ -190,7 +190,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         begin = er.start
                         end = er.start + er.length
                         middle_str = before_str[end:].strip()
-                        if middle_str == '':
+                        if middle_str == '' or regex.search(self.config.preposition_regex, middle_str):
                             tokens.append(Token(begin, match.end()))
                             has_before_date = True
 
@@ -201,7 +201,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         begin = er.start
                         end = er.start + er.length
                         middle_str = followed_str[0:er.start].strip()
-                        if middle_str == '':
+                        if middle_str == '' or regex.search(self.config.preposition_regex, middle_str):
                             tokens.append(Token(match.start(), match.end() + end))
 
         return tokens

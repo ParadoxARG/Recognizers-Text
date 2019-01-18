@@ -54,11 +54,15 @@ build_script:
 test:
           
 test_script:
-    - ECHO ----------------STARTING PYHTON TESTS--------------
+    cd .NET\
+
+    cd ..\JavaScript\
     
-    - cd ..\Python\
+    cd ..\Python\
     
-    - tests.ci.cmd
+    cd ..\Python\
+    
+    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
