@@ -24,8 +24,3 @@ REM Build Packages
 ECHO.
 ECHO # Building - npm run build
 CALL npm run build
-
-REM Tests
-ECHO.
-ECHO # Running tests - npm run test
-CALL npm run test
