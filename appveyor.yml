@@ -54,7 +54,10 @@ build_script:
 test:
           
 test_script:
+    - dir > a.txt | type a.txt
+    
     - cd ..\Python\
+    
     - pip install -e .\libraries\recognizers-text\
 
     - pip install -e .\libraries\recognizers-number\
