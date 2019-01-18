@@ -56,7 +56,20 @@ build_script:
     build.ci.cmd
 
 # disable automatic tests
-test: off
+test:
+- cmd: >-
+    cd ..\.NET\
+    
+    CALL nuget install Appveyor.TestLogger -Version 2.0.0
+    
+    SET testcontainer=
+    FOR /R %%f IN (*Tests.dll) DO (
+        (ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
+            SET testcontainer=!testcontainer! "%%f"
+        )
+    )
+    
+    CALL vstest.console /Parallel %testcontainer% --no-build --no-restore --test-adapter-path:. --logger:Appveyor Test
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
