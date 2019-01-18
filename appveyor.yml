@@ -58,13 +58,11 @@ build_script:
 # disable automatic tests
 test:
 - cmd: >-
-    cd ..\.NET\
-    
     CALL nuget install Appveyor.TestLogger -Version 2.0.0
     
     SET testcontainer=
     FOR /R %%f IN (*Tests.dll) DO (
-        (ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
+        (ECHO "%%f" | FIND /V "\bin\Release" 1>NUL) || (
             SET testcontainer=!testcontainer! "%%f"
         )
     )
