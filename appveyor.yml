@@ -44,16 +44,21 @@ build_script:
     build.ci.cmd
 
     cd ..\JavaScript\
-
+    
     cd ..\Python\
 
     cd ..\java\
+    
+    build.ci.cmd
 
 # disable automatic tests
 test:
     assemblies:
         only:
           - '**\bin\Release\*tests.dll'
+          
+test_script:
+    - mvn clean install --batch-mode
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
