@@ -49,17 +49,6 @@ IF %ERRORLEVEL% NEQ 0 (
 	EXIT /b %ERRORLEVEL%
 )
 
-ECHO.
-ECHO # Running .NET Tests
-SET testcontainer=
-FOR /R %%f IN (*Tests.dll) DO (
-	(ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
-		SET testcontainer=!testcontainer! "%%f"
-	)
-)
-ECHO "!VsTestDir!\vstest.console"
-CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
-IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR
 
 ECHO.
 ECHO # Running CreateAllPackages.cmd
