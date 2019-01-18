@@ -1,10 +1,10 @@
 ECHO ==============================.NET TESTS START==============================
 
+SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
+
 for /f "usebackq tokens=*" %%i in (`!vswhere! -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
   set VSInstallDir=%%i
 )
-
-SET vswhere="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
 set configuration=Release
 
