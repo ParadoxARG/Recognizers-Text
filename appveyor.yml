@@ -54,7 +54,7 @@ build_script:
 test:
           
 test_script:
-    - dir > a.txt | type a.txt
+    - ECHO ----------------STARTING PYHTON TESTS--------------
     
     - cd ..\Python\
     
