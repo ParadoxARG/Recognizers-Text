@@ -42,6 +42,7 @@ build_script:
     cd .NET\
 
     cd ..\JavaScript\
+    
     build.cmd
     
     cd ..\Python\
