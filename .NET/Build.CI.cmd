@@ -51,7 +51,6 @@ IF %ERRORLEVEL% NEQ 0 (
 
 ECHO.
 ECHO # Running .NET Tests
-CALL nuget install Appveyor.TestLogger -Version 2.0.0
 SET testcontainer=
 FOR /R %%f IN (*Tests.dll) DO (
 	(ECHO "%%f" | FIND /V "\bin\%configuration%" 1>NUL) || (
@@ -59,7 +58,7 @@ FOR /R %%f IN (*Tests.dll) DO (
 	)
 )
 ECHO "!VsTestDir!\vstest.console"
-CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer% --logger:Appveyor Test
+CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
 IF %ERRORLEVEL% NEQ 0 GOTO TEST_ERROR
 
 ECHO.
