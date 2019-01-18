@@ -1,4 +1,4 @@
-ECHO ==============================.NET TESTS START==============================
+ECHO ==============================.NET BUILD START==============================
 
 @ECHO off
 SETLOCAL EnableDelayedExpansion
@@ -43,4 +43,4 @@ IF %ERRORLEVEL% NEQ 0 (
 	EXIT /b %ERRORLEVEL%
 )
 
-ECHO ============================== .NET TESTS END ==============================
+ECHO ============================== .NET BUILD END ==============================
