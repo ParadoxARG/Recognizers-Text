@@ -57,12 +57,6 @@ build_script:
 
 # disable automatic tests
 test:
-- cmd: >-
-    CALL wmic os get caption, version, osarchitecture
-    
-    cd .NET\
-
-    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
