@@ -54,6 +54,7 @@ build_script:
 test:
           
 test_script:
+    - cd ..\JavaScript\
     - npm run test
 
 artifacts:
