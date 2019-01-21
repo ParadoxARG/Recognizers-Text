@@ -1,4 +1,4 @@
-ECHO ==============================PYHTON BUILD START==============================
+ECHO ==============================PYTHON BUILD START==============================
 
 pushd libraries\resource-generator
 
@@ -15,11 +15,25 @@ CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 CALL python index.py ..\recognizers-date-time\resource-definitions.json
 CALL python index.py ..\recognizers-sequence\resource-definitions.json
 
+popd
+
+pip install -e .\libraries\recognizers-text\
+
+pip install -e .\libraries\recognizers-number\
+
+pip install -e .\libraries\recognizers-number-with-unit\
+
+pip install -e .\libraries\recognizers-date-time\
+
+pip install -e .\libraries\recognizers-sequence\
+
+pip install -e .\libraries\recognizers-suite\
+
+pip install -r .\tests\requirements.txt
+
 IF %ERRORLEVEL% NEQ 0 (
 	ECHO # Failed to build Python Project.
 	EXIT /b %ERRORLEVEL%
 )
 
-popd
-
-ECHO ============================== PYHTON BUILD END ==============================
+ECHO ============================== PYTHON BUILD END ==============================

@@ -1,4 +1,4 @@
-ECHO ==============================PYHTON TESTS START==============================
+ECHO ==============================PYTHON TESTS START==============================
 
 pip install -e .\libraries\recognizers-text\
 
@@ -16,4 +16,4 @@ pip install -r .\tests\requirements.txt
 
 pytest --tb=line
 
-ECHO ============================== PYHTON TESTS END ==============================
+ECHO ============================== PYTHON TESTS END ==============================
