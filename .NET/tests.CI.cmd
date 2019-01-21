@@ -42,7 +42,7 @@ IF %ERRORLEVEL% NEQ 0 (
 EXIT /b 0
 
 :TEST_ERROR
-ECHO Test failure(s) found!
+ECHO .NET Test failure(s) found!
 EXIT /b 1
 
 ECHO ============================== .NET TESTS END ==============================

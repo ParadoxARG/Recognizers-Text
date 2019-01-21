@@ -1,3 +1,5 @@
+ECHO ==============================JAVA BUILD START==============================
+
 @ECHO off
 
 ECHO # Java environment info
@@ -15,3 +17,10 @@ CALL mvn compile exec:java -pl libraries/resource-generator/
 
 ECHO # Building Java platform
 CALL mvn clean package --batch-mode -Dmaven.test.skip=true
+
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to build Java Project.
+	EXIT /b %ERRORLEVEL%
+)
+
+ECHO ============================== JAVA BUILD END ==============================

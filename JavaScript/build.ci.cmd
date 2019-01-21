@@ -25,4 +25,9 @@ ECHO.
 ECHO # Building - npm run build
 CALL npm run build
 
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to build JavaScript Project.
+	EXIT /b %ERRORLEVEL%
+)
+
 ECHO ============================== JS BUILD END ==============================

@@ -15,6 +15,11 @@ CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 CALL python index.py ..\recognizers-date-time\resource-definitions.json
 CALL python index.py ..\recognizers-sequence\resource-definitions.json
 
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to build Python Project.
+	EXIT /b %ERRORLEVEL%
+)
+
 popd
 
 ECHO ============================== PYHTON BUILD END ==============================

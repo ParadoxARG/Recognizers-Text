@@ -16,4 +16,9 @@ pip install -r .\tests\requirements.txt
 
 pytest --tb=line
 
+:TEST_ERROR
+ECHO Python Test failure(s) found!
+EXIT /b 1
+
+
 ECHO ============================== PYHTON TESTS END ==============================
