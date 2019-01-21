@@ -1335,7 +1335,6 @@
   },
   {
     "Input": "Ocurrió antes de las 2 de la tarde del martes pasado",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
