@@ -53,6 +53,8 @@ build_script:
 
     cd ..\java\
     
+    build.ci.cmd
+    
 
 # disable automatic tests
 test:
@@ -64,11 +66,15 @@ test_script:
 
     cd ..\JavaScript\
     
+    tests.ci.cmd
+    
     cd ..\Python\
     
     tests.ci.cmd
     
     cd ..\java\
+    
+    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'

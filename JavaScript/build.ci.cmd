@@ -1,4 +1,4 @@
-ECHO ==============================JS BUILD START==============================
+ECHO ==============================JAVASCRIPT BUILD START==============================
 
 ECHO.
 ECHO # Building Javascript platform
@@ -30,4 +30,4 @@ IF %ERRORLEVEL% NEQ 0 (
 	EXIT /b %ERRORLEVEL%
 )
 
-ECHO ============================== JS BUILD END ==============================
+ECHO ============================== JAVASCRIPT BUILD END ==============================
