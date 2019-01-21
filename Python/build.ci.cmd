@@ -1,4 +1,4 @@
-ECHO ==============================PYTHON BUILD START==============================
+ECHO ==============================PYTHON BUILD/TEST START==============================
 
 pushd libraries\resource-generator
 
@@ -34,8 +34,8 @@ pip install -r .\tests\requirements.txt
 pytest --tb=line
 
 IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to build Python Project.
+	ECHO # Failed to build/test Python Project.
 	EXIT /b %ERRORLEVEL%
 )
 
-ECHO ============================== PYTHON BUILD END ==============================
+ECHO ============================== PYTHON BUILD/TEST END ==============================

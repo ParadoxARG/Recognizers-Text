@@ -40,10 +40,16 @@ build_script:
     CALL node -e "console.log(process.versions.v8);"
 
     cd .NET\
+    
+    build.ci.cmd
 
     cd ..\JavaScript\
     
+    build.ci.cmd
+    
     cd ..\Python\
+    
+    build.ci.cmd
 
     cd ..\java\
     
@@ -53,10 +59,16 @@ test:
           
 test_script:
     cd ..\.NET\
+    
+    tests.ci.cmd
 
     cd ..\JavaScript\
     
+    tests.ci.cmd
+    
     cd ..\Python\
+    
+    tests.ci.cmd
     
     cd ..\java\
     
