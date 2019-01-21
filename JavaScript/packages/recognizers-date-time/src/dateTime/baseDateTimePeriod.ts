@@ -71,7 +71,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         let begin = er.start;
                         let end = er.start + er.length;
                         let middleStr = beforeStr.substr(begin + er.length).trim().toLowerCase();
-                        if (StringUtility.isNullOrWhitespace(middleStr)) {
+                        if (StringUtility.isNullOrWhitespace(middleStr) || RegExpUtility.getMatches(this.config.prepositionRegex, middleStr).length > 0) {
                             tokens.push(new Token(begin, match.index + match.length));
                             hasBeforeDate = true;
                         }
@@ -85,7 +85,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         let begin = er.start;
                         let end = er.start + er.length;
                         let middleStr = followedStr.substr(0, begin).trim().toLowerCase();
-                        if (StringUtility.isNullOrWhitespace(middleStr)) {
+                        if (StringUtility.isNullOrWhitespace(middleStr) || RegExpUtility.getMatches(this.config.prepositionRegex, middleStr).length > 0) {
                             tokens.push(new Token(match.index, match.index + match.length + end));
                         }
                     }
