@@ -2,8 +2,9 @@ ECHO ==============================JAVA TESTS START=============================
 
 mvn clean install --batch-mode
 
-:TEST_ERROR
-ECHO Java Test failure(s) found!
-EXIT /b 1
-	
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO Java Test failure(s) found!
+	EXIT /b %ERRORLEVEL%
+)
+
 ECHO ============================== JAVA TESTS END ==============================
