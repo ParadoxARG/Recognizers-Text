@@ -33,9 +33,14 @@ pip install -r .\tests\requirements.txt
 
 pytest --tb=line
 
-IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to build/test Python Project.
+IF %ERRORLEVEL% EQ 1 (
+	ECHO # Failed to test Python Project.
 	EXIT /b %ERRORLEVEL%
+) ELSE (
+	IF %ERRORLEVEL% NEQ 0 (
+		ECHO # Failed to build Python Project.
+		EXIT /b %ERRORLEVEL%
+	)
 )
 
 ECHO ============================== PYTHON BUILD/TEST END ==============================
