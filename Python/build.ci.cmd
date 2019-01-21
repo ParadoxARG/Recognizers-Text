@@ -34,7 +34,7 @@ pip install -r .\tests\requirements.txt
 pytest --tb=line
 
 IF %ERRORLEVEL% == 1 (
-	ECHO Python Test failure(s) found!
+	ECHO Python Test failure/s found!
 	EXIT /b %ERRORLEVEL%
 ) ELSE (
 	IF %ERRORLEVEL% NEQ 0 (
