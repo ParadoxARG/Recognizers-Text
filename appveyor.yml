@@ -55,8 +55,6 @@ build_script:
     
     build.ci.cmd
     
-
-# disable automatic tests
 test:
           
 test_script:
