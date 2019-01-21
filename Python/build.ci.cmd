@@ -33,7 +33,7 @@ pip install -r .\tests\requirements.txt
 
 pytest --tb=line
 
-IF %ERRORLEVEL% EQ 1 (
+IF %ERRORLEVEL% == 1 (
 	ECHO # Failed to test Python Project.
 	EXIT /b %ERRORLEVEL%
 ) ELSE (
