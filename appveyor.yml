@@ -53,8 +53,6 @@ test:
           
 test_script:
     cd ..\.NET\
-    
-    tests.ci.cmd
 
     cd ..\JavaScript\
     
@@ -62,11 +60,7 @@ test_script:
     
     cd ..\Python\
     
-    tests.ci.cmd
-    
     cd ..\java\
-    
-    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'

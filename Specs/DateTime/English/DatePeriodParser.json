@@ -454,7 +454,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "the third week of this month",
