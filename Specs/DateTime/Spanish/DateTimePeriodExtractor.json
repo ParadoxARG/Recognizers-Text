@@ -1336,7 +1336,7 @@
   {
     "Input": "Ocurrió antes de las 2 de la tarde del martes pasado",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript, java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "antes de las 2 de la tarde del martes pasado",
