@@ -44,6 +44,7 @@ build_script:
     build.ci.cmd
 
     cd ..\JavaScript\
+    
     build.ci.cmd
     
     cd ..\Python\

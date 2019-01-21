@@ -39,7 +39,7 @@ CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Definitions.Common\Microsoft.R
 ECHO # Building .NET solution (%configuration%)
 CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=%configuration%
 IF %ERRORLEVEL% NEQ 0 (
-	ECHO # Failed to build.
+	ECHO # Failed to build .Net Project.
 	EXIT /b %ERRORLEVEL%
 )
 
