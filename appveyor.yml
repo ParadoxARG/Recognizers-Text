@@ -44,10 +44,10 @@ build_script:
     cd ..\JavaScript\
     
     cd ..\Python\
-    
-    build.ci.cmd
 
     cd ..\java\
+    
+    build.ci.cmd
     
 test:
           
@@ -58,9 +58,9 @@ test_script:
     
     cd ..\Python\
     
-    tests.ci.cmd
-    
     cd ..\java\
+    
+    tests.ci.cmd
 
 artifacts:
     - path: '**\*Microsoft.Recognizers*.nupkg'
