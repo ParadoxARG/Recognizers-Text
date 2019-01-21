@@ -31,6 +31,8 @@ pip install -e .\libraries\recognizers-suite\
 
 pip install -r .\tests\requirements.txt
 
+pytest --tb=line
+
 IF %ERRORLEVEL% NEQ 0 (
 	ECHO # Failed to build Python Project.
 	EXIT /b %ERRORLEVEL%
