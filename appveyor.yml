@@ -43,11 +43,11 @@ build_script:
 
     cd ..\JavaScript\
     
+    build.ci.cmd
+    
     cd ..\Python\
 
     cd ..\java\
-    
-    build.ci.cmd
     
 test:
           
