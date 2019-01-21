@@ -43,9 +43,9 @@ build_script:
 
     cd ..\JavaScript\
     
-    build.ci.cmd
-    
     cd ..\Python\
+    
+    build.ci.cmd
 
     cd ..\java\
     
@@ -56,9 +56,9 @@ test_script:
 
     cd ..\JavaScript\
     
-    tests.ci.cmd
-    
     cd ..\Python\
+    
+    tests.ci.cmd
     
     cd ..\java\
 
